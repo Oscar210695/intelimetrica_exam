@@ -1,0 +1,19 @@
+{
+    "city": "México",
+    "email": "oskr210695@gmail.com",
+    "id": "11111111-1111-1111-1111-111111111111",
+    "lat": 19.4411028197343,
+    "lng": -99.1292894373791,
+    "name": "Oscar's Restaurant",
+    "phone": "5576747857",
+    "rating": 1,
+    "site": "oscarR.com",
+    "state": "CDMX",
+    "street": "50 Duraznos"
+}
+
+{
+    "latitude": 19.4411028197343,
+    "longitude": -99.1292894373791,
+    "radius": 80
+}

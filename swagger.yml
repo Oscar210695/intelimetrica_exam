@@ -1,0 +1,344 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /restaurant:
+    get:
+      operationId: restaurant.read_all
+      tags:
+        - Restaurant
+      summary: Read the entire set of restaurant, sorted by name
+      description: Read the entire set of restaurant, sorted by name
+      responses:
+        200:
+          description: Successfully read restaurant set operation
+          schema:
+            type: array
+            items:
+              properties:
+                id:
+                  type: string
+                  description: Id of the restaurant
+                rating:
+                  type: integer
+                  description: Number between 0 and 4
+                name:
+                  type: string
+                  description: Name of the restaurant
+                site:
+                  type: string
+                  description: Web Page of the restaurant
+                email:
+                  type: string
+                  description: Email of the restaurant
+                phone:
+                  type: string
+                  description: Phone of the restaurant
+                street:
+                  type: string
+                  description: Email of the restaurant
+                city:
+                  type: string
+                  description: City of the restaurant
+                state:
+                  type: string
+                  description: State of the restaurant
+                lat:
+                  type: number
+                  description: Latitude
+                lng:
+                  type: number
+                  description: Longitude of the restaurant
+
+    post:
+      operationId: restaurant.create
+      tags:
+        - Restaurant
+      summary: Add a restaurant
+      description: Add a restaurant
+      parameters:
+        - name: restaurant
+          in: body
+          description: Restaurant to create
+          required: True
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Id of the restaurant
+              rating:
+                type: integer
+                description: Number between 0 and 4
+              name:
+                type: string
+                description: Name of the restaurant
+              site:
+                type: string
+                description: Web Page of the restaurant
+              email:
+                type: string
+                description: Email of the restaurant
+              phone:
+                type: string
+                description: Phone of the restaurant
+              street:
+                type: string
+                description: Email of the restaurant
+              city:
+                type: string
+                description: City of the restaurant
+              state:
+                type: string
+                description: State of the restaurant
+              lat:
+                type: number
+                description: Latitude
+              lng:
+                type: number
+                description: Longitude
+      responses:
+        201:
+          description: Successfully created restaurant
+          schema:
+            properties:
+              id:
+                type: string
+                description: Id of the restaurant
+              rating:
+                type: integer
+                description: Number between 0 and 4
+              name:
+                type: string
+                description: Name of the restaurant
+              site:
+                type: string
+                description: Web Page of the restaurant
+              email:
+                type: string
+                description: Email of the restaurant
+              phone:
+                type: string
+                description: Phone of the restaurant
+              street:
+                type: string
+                description: Email of the restaurant
+              city:
+                type: string
+                description: City of the restaurant
+              state:
+                type: string
+                description: State of the restaurant
+              lat:
+                type: number
+                description: Latitude
+              lng:
+                type: number
+                description: Longitude
+
+  /restaurant/{id}:
+    get:
+      operationId: restaurant.read_one
+      tags:
+        - Restaurant
+      summary: Read one record
+      description: Read one record
+      parameters:
+        - name: id
+          in: path
+          description: Id of the restaurant to get
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read one record from restaurant data operation
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Id of the restaurant
+              rating:
+                type: integer
+                description: Number between 0 and 4
+              name:
+                type: string
+                description: Name of the restaurant
+              site:
+                type: string
+                description: Web Page of the restaurant
+              email:
+                type: string
+                description: Email of the restaurant
+              phone:
+                type: string
+                description: Phone of the restaurant
+              street:
+                type: string
+                description: Email of the restaurant
+              city:
+                type: string
+                description: City of the restaurant
+              state:
+                type: string
+                description: State of the restaurant
+              lat:
+                type: number
+                description: Latitude
+              lng:
+                type: number
+                description: Longitude
+
+    put:
+      operationId: restaurant.update
+      tags:
+        - Restaurant
+      summary: Update a restaurant
+      description: Update a restaurant
+      parameters:
+        - name: id
+          in: path
+          description: Id the restaurant to update
+          type: integer
+          required: True
+        - name: restaurant
+          in: body
+          schema:
+            type: object
+            properties:
+              rating:
+                type: integer
+                description: Number between 0 and 4
+              name:
+                type: string
+                description: Name of the restaurant
+              site:
+                type: string
+                description: Web Page of the restaurant
+              email:
+                type: string
+                description: Email of the restaurant
+              phone:
+                type: string
+                description: Phone of the restaurant
+              street:
+                type: string
+                description: Email of the restaurant
+              city:
+                type: string
+                description: City of the restaurant
+              state:
+                type: string
+                description: State of the restaurant
+              lat:
+                type: number
+                description: Latitude
+              lng:
+                type: number
+                description: Longitude
+      responses:
+        200:
+          description: Successfully updated restaurant
+          schema:
+            properties:
+              id:
+                type: string
+                description: Id of the restaurant
+              rating:
+                type: integer
+                description: Number between 0 and 4
+              name:
+                type: string
+                description: Name of the restaurant
+              site:
+                type: string
+                description: Web Page of the restaurant
+              email:
+                type: string
+                description: Email of the restaurant
+              phone:
+                type: string
+                description: Phone of the restaurant
+              street:
+                type: string
+                description: Email of the restaurant
+              city:
+                type: string
+                description: City of the restaurant
+              state:
+                type: string
+                description: State of the restaurant
+              lat:
+                type: number
+                description: Latitude
+              lng:
+                type: number
+                description: Longitude
+
+    delete:
+      operationId: restaurant.delete
+      tags:
+        - Restaurant
+      summary: Delete a restaurant from the list
+      description: Delete a restaurant
+      parameters:
+        - name: id
+          in: path
+          type: string
+          description: Id of the restaurant to delete
+          required: true
+      responses:
+        200:
+          description: Successfully deleted restaurant
+
+  /restaurant/statistics:
+    put:
+      operationId: restaurant.statistics
+      tags:
+        - Restaurant
+      summary: Return statistical data
+      description: Return statistical data
+      parameters:
+        - name: coordenates
+          in: body
+          description: Latitude, Longitude and Radius
+          required: True
+          schema:
+            type: object
+            properties:
+              latitude:
+                type: string
+                description: Latitude
+              longitude:
+                type: string
+                description: Longitude
+              radius:
+                type: string
+                description: Radius
+      responses:
+        200:
+          description: Success
+          schema:
+            properties:
+              count: 
+                type: integer
+                description: Count of restaurants that fall inside the circle with center [x,y] y radius z
+              avg:
+                type: number
+                description: Average rating of restaurant inside the circle
+              std:
+                type: number
+                description: Standard deviation of rating of restaurants inside the circle
+
+
+
